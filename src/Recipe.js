@@ -1,5 +1,5 @@
 import React from 'react';
-import Style from './recipe.module.scss';
+import Styles from './Recipe.module.scss';
 
 const Recipie = ({title, calories, image, ingredients}) => {
 

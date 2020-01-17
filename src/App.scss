@@ -1,8 +1,19 @@
+$slateGrey: #181C1D;
+$lightGreenGrey: #576569;
+$darkteal: #1C3136;
+$mediumTeal: #375F69;
+$lightTeal: #96AFB5;
+$lightRust: #B5753A;
+$darkRust: #694E36;
+$offWhite: #F2F5F3;
+
 .app {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: $slateGrey;
+  color: $offWhite;
 
   .submit-section {
     display: flex;
@@ -12,9 +23,15 @@
     margin: 2rem;
   }
   .app-header {
-   color: #282c34;
+  //  color: #282c34;
    font-size: calc(10px + 2vmin);
    margin-bottom: 1rem;
+  }
+  .search-button {
+    background-color: $lightRust;
+    border: none;
+    color: $offWhite;
+    font-weight: bold;
   }
 
 }
