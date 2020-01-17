@@ -1,0 +1,5 @@
+Theres are Blanco's notes for the Create React App Tutorial for the Recipe App
+
+URL for API: https://developer.edamam.com/
+URL for video: https://www.youtube.com/watch?v=U9T6YkEDkMo
+stoped at 29:45
