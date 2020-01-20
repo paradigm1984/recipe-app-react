@@ -5,7 +5,6 @@ import './App.scss';
 import {InputGroup, FormControl, Button} from 'react-bootstrap';
 
 const App = ()=> {
-  // you can write actuakl JS anywhere between opening up the component and the return function
 
   const APP_ID = "4ca90bc3";
   const APP_KEY = "efcca35385635d8635bd078f5b89099f";
@@ -26,7 +25,7 @@ const App = ()=> {
   });
 
   const updateWidthAndHeight = () => {
-    setAppDimensions({width: window.innerWidth, height: window.innerHeight})
+    setAppDimensions({minWidth: window.innerWidth, minHeight: window.innerHeight})
   };
 
   // async functions are a way to use promises. similar to .then().
@@ -76,15 +75,15 @@ const App = ()=> {
       <section className="response-section">
         {/* mapping the array of objects which is being pulled in by the API.
         uses the Recipie component to lay it all out in HTML (JSX) */}
-        {recipies.map(recipe =>(
-          <Recipie
-            key={recipe.recipe.uri}
-            title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
-            image={recipe.recipe.image}
-            ingredients={recipe.recipe.ingredients}
-          />
-        ))}
+          {recipies.map(recipe =>(
+            <Recipie
+              key={recipe.recipe.uri}
+              title={recipe.recipe.label}
+              calories={recipe.recipe.calories}
+              image={recipe.recipe.image}
+              ingredients={recipe.recipe.ingredients}
+            />
+          ))}
       </section>
     </div>
   );
