@@ -1,42 +1,41 @@
-const express = require('express');
+// server.js - root file
+
+const express = require("express");
+const dotenv = require('dotenv');
+const colors = require('colors');
 const cors = require('cors');
-var logger = require("morgan");
-const mongoose = require('mongoose');
+const morgan = require('morgan');
+const path = require("path");
+const app = express();
+// const port = process.env.PORT || 5000;
+const port = 5000;
+
+const recipiesRouter = require('./routes/recipie-router');
+const usersRouter = require('./routes/user-router');
 
 require('dotenv').config();
 
-// Require all models
-// var db = require("./models");
 
-const app = express();
-const port = process.env.PORT || 5000;
-app.use(cors());
-// Use morgan logger for logging requests
-app.use(logger("dev"));
-// Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
+// db connection
+require('./config/db.config');
+
 app.use(express.json());
-// Make public a static folder
-app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-const uri = "mongodb://localhost/recipe-app";
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
-
-const connection = mongoose.connection;
-connection.once('open', () => {
-    console.log("MongoDB database connection established successfully");
-})
-
-router.use(function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
-
-const recipiesRouter = require('./routes/recipies-route');
-const usersRouter = require('./routes/users-route');
+if (process.env.NODE_ENV === 'development') {
+    app.use(morgan('dev'));
+}
 
 app.use('/recipies', recipiesRouter);
 app.use('/users', usersRouter);
 
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`server is running on port: ${port}`.blue.bold)
 });
