@@ -48,6 +48,7 @@ const App = ()=> {
     e.preventDefault();
     setQueryString(searchString);
     setSearchString("");
+    updateWidthAndHeight();
   }
 
   return (
