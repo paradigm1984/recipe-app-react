@@ -1,4 +1,4 @@
-## Recipe Search App
+# Recipe Search App
 
 ### Technologies used:
 - HTML5
