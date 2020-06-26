@@ -1,14 +1,13 @@
 import React,{useEffect, useState} from 'react';
 import Recipie from './Recipe';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
-import {InputGroup, FormControl, Button} from 'react-bootstrap';
+import './styles/App.scss';
+import { InputGroup, FormControl, Button, Row } from 'react-bootstrap';
 
 const App = ()=> {
 
   const APP_ID = "4ca90bc3";
   const APP_KEY = "efcca35385635d8635bd078f5b89099f";
-
   const [recipies, setRecipies] = useState([]);  
   const [searchString, setSearchString] = useState("");
   const [queryString, setQueryString] = useState("");
@@ -74,9 +73,10 @@ const App = ()=> {
    
       </section>
       <section className="response-section">
-        {/* mapping the array of objects which is being pulled in by the API.
+        <Row>
+          {/* mapping the array of objects which is being pulled in by the API.
         uses the Recipie component to lay it all out in HTML (JSX) */}
-          {recipies.map(recipe =>(
+          {recipies.map(recipe => (
             <Recipie
               key={recipe.recipe.uri}
               title={recipe.recipe.label}
@@ -85,6 +85,7 @@ const App = ()=> {
               ingredients={recipe.recipe.ingredients}
             />
           ))}
+        </Row>
       </section>
     </div>
   );
