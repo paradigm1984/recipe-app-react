@@ -2,7 +2,7 @@
   "name": "recipe-app-mern-server",
   "version": "1.0.0",
   "description": "server",
-  "main": "index.js",
+  "main": "Server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
     "server": "node Server.js",
