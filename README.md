@@ -12,7 +12,6 @@ Recipe App is a react application that provides recipes based on a key word or p
 - Node JS
 
 ## Notealbe Packages used:
-
 - express
 - mongoose
 - morgan
@@ -22,9 +21,6 @@ Recipe App is a react application that provides recipes based on a key word or p
 
 ### Version:
 1.0.0
-
-
-
 
 
 ## Getting Started:
@@ -37,21 +33,20 @@ Recipe App is a react application that provides recipes based on a key word or p
 
 #### Navigate back to the root directory and run "npm start",
 
+
 ## Usage:
 
-#### Type in a transaciton entry in the form at the bottom of the application. If it is an expense, preface the value with a "-". If it's positive, type the value as normal.
+#### Type in a recipie or food in the search bar.
 
-#### The entry will be added to the history list. This list is collapsable.
+#### The application will then check the Edamam API (https://developer.edamam.com/) for any recipies matching the name or keywords entered and display them in a grid form .
 
-#### To delete a transaction, hover over it until the "X" shows up and click it.
 
 ## Future Enhancements / Fixes:
 
-#### Rotation of the caret when the accordion is opened and closed (using state).
+#### Currently the query front end only displays the name of the recipie. I will impliment a modal on click which will contain the recipie infomation.
 
-#### Adding loaders on the front end during the database calls
+#### Adding a loader while querying the API
 
-#### Fix adding a transaction on mobile - not properly reading input value
 
 ### Link to the live site:
 
