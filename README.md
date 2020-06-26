@@ -55,6 +55,6 @@ Recipe App is a react application that provides recipes based on a key word or p
 
 ### Link to the live site:
 
-https://mern-expense-report-app.herokuapp.com/
+https://recipie-app-mern.herokuapp.com/
 
 #### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

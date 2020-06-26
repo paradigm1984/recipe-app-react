@@ -10,15 +10,18 @@ const port = 5000;
 
 require('dotenv').config();
 
-const recipieSearch = require('./api/recipie_search');
-app.use('/api/transactions', recipieSearch);
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(cors());
 
-if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static("build"));
+
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "build", "index.html"));
+    });
 }
 
 app.get('/', (req, res) => {
