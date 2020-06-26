@@ -1,10 +1,5 @@
 ## Recipe Search App
 
-
-## About:
-Recipe App is a react application that provides recipes based on a key word or phrase, such as "Chicken" or "Green Beans". This application uses the edamam.com API (https://developer.edamam.com/) for recipe information.
-
-
 ### Technologies used:
 - HTML5
 - SASS
@@ -38,7 +33,7 @@ Recipe App is a react application that provides recipes based on a key word or p
 
 #### Type in a recipie or food in the search bar.
 
-#### The application will then check the Edamam API (https://developer.edamam.com/) for any recipies matching the name or keywords entered and display them in a grid form .
+#### The application will then check the Edamam API for any recipies matching the name or keywords entered and display them in a grid form .
 
 
 ## Future Enhancements / Fixes:
