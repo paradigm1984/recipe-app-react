@@ -26,9 +26,13 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
+if (process.env.NODE_ENV === "dev") {
+    // Express will serve up production assets
+    app.use(express.static("public"));
+    app.get("*", (req, res) =>
+        res.sendFile(path.resolve("public", "index.html"))
+    );
+}
 
 
 app.listen(port, () => {
