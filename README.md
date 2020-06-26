@@ -1,4 +1,4 @@
-## Recipe App - under construction :(
+## Recipe Search App
 
 
 ## About:
