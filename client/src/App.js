@@ -2,7 +2,19 @@ import React,{useEffect, useState} from 'react';
 import Recipie from './Recipe';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.scss';
-import { InputGroup, Form, Button, Row } from 'react-bootstrap';
+import { InputGroup, Form, Button, Row, Accordion, Table } from 'react-bootstrap';
+// Fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+
+
+// TODO: add filters.js to this file and have access to that array of objects so that you
+// can create a dropdown under the search with more detailed search fields. you might have to
+// export them from the filters.js file
+
+// also TODO: finish styling the data in the cards and see what else you want to bring in 
+// from the API data
+
 
 const App = ()=> {
 
@@ -15,9 +27,9 @@ const App = ()=> {
   const [appDimensions, setAppDimensions] = React.useState({width: window.innerWidth, height: window.innerHeight});
 
   // by adding an empty array to the useEffect function as a param, itll only run when the app has mounted. you could add the state in which you want this function to run within the array.
-  // useEffect(()=> {
-  //   getRecipies();
-  // }, [queryString]);
+  useEffect(()=> {
+    getRecipies();
+  }, [queryString]);
 
   useEffect(() => {
     window.addEventListener("resize", updateWidthAndHeight);
@@ -72,7 +84,7 @@ const App = ()=> {
     <div className="app" style={appDimensions}>
       <section className="submit-section">
         <h2 className="app-header-1" >Recipe Search</h2>
-        <Form onSubmit={submitSearch}>
+        <Form id="recipeSubmit" onSubmit={submitSearch}>
           <InputGroup className="mb-3">
             <Form.Control
               placeholder="Search a recipe"
@@ -87,24 +99,44 @@ const App = ()=> {
               <Button variant="outline-secondary" type="submit" className="search-button">Submit</Button>
             </InputGroup.Append>
           </InputGroup>
-          <div className="filter-select-list">
-            <h3 className="app-header-2" >Filters</h3>
-            <Form.Control
-              as="select"
-              id="inlineFormCustomSelect"
-              className="custom-select"
-              onChange={updateFilter}
-            >
-              <option value="0">Choose...</option>
-              <option value="vegan">Vegan</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="peanut-free">Peanut-Free</option>
-              <option value="tree-nut-free">Tree-Nut-Free</option>
-              <option value="peanut-free">Peanut-Free</option>
-            </Form.Control>
-          </div>
+          <Accordion className="hidden-filters-container" defaultActiveKey="0">
+            <Accordion.Toggle className="filter-button" as={Button} variant="link" eventKey="1">
+              <span>View Filters</span>
+              <FontAwesomeIcon icon={faCaretDown} color="#495057" />
+            </Accordion.Toggle>
+            <Accordion.Collapse eventKey="1">
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td colSpan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </Accordion.Collapse>
+          </Accordion>
         </Form>
-   
       </section>
       <section className="response-section">
         <Row className="recipie-row">
