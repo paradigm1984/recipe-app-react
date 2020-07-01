@@ -5,7 +5,3 @@ URL for video: https://www.youtube.com/watch?v=U9T6YkEDkMo
 stoped at 29:45
 
 
-
-right now this application makes the call to the food api from the front end. you should pass this to a backend file
-using an axios post request and then having that file make the api call then display the data back. this will make the
-app more secure and not have stuff lingering on the front end. also easier to later impliment the database

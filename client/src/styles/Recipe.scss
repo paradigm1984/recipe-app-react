@@ -12,65 +12,109 @@
     align-items: baseline;
     flex-wrap: wrap;
 
-
     .recipe-card {
       margin: 1rem auto 2rem;
       height: auto;
       color: $slateGrey;
-      max-width: 500px;
-    }
-    .card-img-container {
-      padding: 1.521rem;
-    }
+      max-width: 450px;
 
-    .basic-info-container {
-      display: flex;
-      flex-direction: column;
-      // justify-content: space-around;
-      align-items: baseline;
+      .card-header {
+        background-color: $sand;
+
+        .card-header-title {
+          color: $brown;
+        }
+      }
+      .card-img-container {
+        padding: 1.521rem;
+        background-color: $sand;
+      }
+      .card-img-container img {
+        border-radius: 4px !important;
+      }
+      
+      .basic-info-container {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-around;
+        align-items: baseline;
+        padding: 0.75rem 1.25rem;
 
 
-      .calories,
-      .cautions,
-      .filter {
+        .calories,
+        .cook-time {
+          text-align: center;
+        }
+        .cal-title,
+        .cautions {
+          font-weight: bold;
+        }
+        .cautions-list-container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+
+          .cautions {
+            display: block;
+            width: 100%;
+          }
+          
+          .cautions-list {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            list-style-type: none;
+
+
+            .cautions-list-item {
+              margin: 10px;
+              padding: 7px 9px;
+              border: 1px solid $tabBorderGrey;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+
+      .expand-button {
+        margin: 0;
+        padding: 0.75rem 1.25rem;
+        width: 100%;
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.17em;
+      }
+
+      .expand-button span {
+        font-size: 1.17em;
+        color: black;
+      }
+
+      .show > .fa-caret-down {
+        transform: rotate(90deg);
+      }
+
+      .card-body {
         text-align: center;
       }
-    }
-   
-
-    .expand-button {
-      margin: 0;
-      padding: 5px 7px;
-      width: 100%;
-      display: flex !important;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1.17em;
-    }
-
-    .expand-button span {
-      font-size: 1.17em;
-      color: black;
-  }
-
-
-    .card-body {
-      text-align: center;
-    }
-    .card-title {
-      font-weight: bold;
-    }
-
-    .button-container {
-      width: 100%;
-      text-align: center;
-
-      .recipe-button {
-        background-color: $lightRust;
-        border: none;
-        border-radius: 0.25rem;
-        border: 1px solid rgba(0, 0, 0, 0.125);
+      .card-title {
         font-weight: bold;
+      }
+
+      .button-container {
+        width: 100%;
+        text-align: center;
+
+        .recipe-button {
+          background-color: $lightRust;
+          border: none;
+          border-radius: 0.25rem;
+          border: 1px solid rgba(0, 0, 0, 0.125);
+          font-weight: bold;
+        }
       }
     }
   }

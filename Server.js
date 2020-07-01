@@ -2,12 +2,11 @@
 
 const express = require("express");
 const colors = require('colors');
+const dotenv = require('dotenv');
 const path = require('path');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 5001;
-
-require('dotenv').config();
+const port = process.env.PORT || 8000;
 
 
 app.use(express.json());
@@ -24,15 +23,12 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-if (process.env.NODE_ENV === "dev") {
-    // Express will serve up production assets
-    app.use(express.static("public"));
-    app.get("*", (req, res) =>
-        res.sendFile(path.resolve("public", "index.html"))
-    );
-}
-
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 app.listen(port, () => {
     console.log(`server is running on port: ${port}`.blue.bold)
 });
+
+

@@ -14,3 +14,13 @@
   <option value="peanut-free">Peanut-Free</option>
  </Form.Control>
 </div>
+
+
+
+
+
+
+
+<div className="filters-choice-row">
+
+</div>

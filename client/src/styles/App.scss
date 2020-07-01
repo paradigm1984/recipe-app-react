@@ -7,6 +7,7 @@
   align-items: center;
   background-color: $slateGrey;
   color: $offWhite;
+  padding: 1rem;
 
   // div where the user submits
   .submit-section {
@@ -50,7 +51,35 @@
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          
+          border-bottom: 1px solid $tabBorderGrey;
+        }
+      }
+
+      #filters {
+        width: 100%;
+        background-color: white;
+        color: $slateGrey;
+        padding: 1.5rem .4rem .4rem .4rem;
+        border-radius: 4px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+
+        .tab-content {
+          border: 1px solid $tabBorderGrey;
+          border-top: none;
+          padding: 1rem;
+          border-radius: 4px;
+        }
+   
+        .filters-choice-row {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 1rem;
         }
       }
     }
