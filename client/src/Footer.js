@@ -17,7 +17,7 @@ const Footer = () => {
      </Col>
      <Col xs={ 5 }>
        <h6 className="footer-link">
-        <a href="https://danblanco.com">More Applications</a>
+        <a href="https://danblanco.com">Portfolio</a>
        </h6>
      </Col>
     </Row>
