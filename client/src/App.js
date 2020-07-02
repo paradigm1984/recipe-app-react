@@ -12,7 +12,10 @@ const App = () => {
   const [recipies, setRecipies] = useState([]);  
   const [searchString, setSearchString] = useState("");
   const [queryString, setQueryString] = useState("");
-  const [appDimensions, setAppDimensions] = React.useState({width: window.innerWidth, height: window.innerHeight});
+  const [appDimensions, setAppDimensions] = React.useState({
+    width: window.innerWidth,
+    height: window.innerHeight - 330
+  });
 
   // by adding an empty array to the useEffect function as a param, itll only run when the app has mounted. you could add the state in which you want this function to run within the array.
   useEffect(()=> {
@@ -25,7 +28,10 @@ const App = () => {
   });
 
   const updateWidthAndHeight = () => {
-    setAppDimensions({minWidth: window.innerWidth, minHeight: window.innerHeight})
+    setAppDimensions({
+      minWidth: window.innerWidth,
+      minHeight: window.innerHeight - 330
+    })
   };
 
   // async functions are a way to use promises. similar to .then().
@@ -55,8 +61,8 @@ const App = () => {
   }
 
   return (
-    <div className="app" style={appDimensions}>
-      <section className="submit-section">
+    <div className="app">
+      <section className="submit-section" style={appDimensions}>
         <h2 className="app-header-1" >Ingredient Search</h2>
         <Form id="recipeSubmit" onSubmit={submitSearch}>
           <InputGroup className="mb-3 recipe-input">
