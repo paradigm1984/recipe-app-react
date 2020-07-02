@@ -38,9 +38,9 @@
 
 ## Future Enhancements / Fixes:
 
-#### Currently the query front end only displays the name of the recipie. I will impliment a modal on click which will contain the recipie infomation.
+#### Adding A clear button to easily re-search
 
-#### Adding a loader while querying the API
+#### Adding A loader while querying the API
 
 
 ### Link to the live site:
