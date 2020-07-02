@@ -14,7 +14,7 @@ const Recipie = ({ title, calories, image, ingredients, cautions }) => {
 
 
   return (
-    <Col lg={5} sm={10}>
+    <Col lg={4} sm={10}>
       <Accordion defaultActiveKey="0">
         <Card className="recipe-card">
           <div className="card-img-container container">
@@ -24,10 +24,10 @@ const Recipie = ({ title, calories, image, ingredients, cautions }) => {
             <h2 className="card-header-title">{ title }</h2>
           </Card.Header>
           <div className="basic-info-container">
-            <p className="calories"><span className="cal-title">Calories:</span>{calories}</p>
-            <div className="cautions-list-container">
-              <p className="cautions" style={{ display: (cautionsList.length > 0 ? 'inherit' : 'none') }}>Cautionary Labels:</p>
-              <ListGroup style={{ display: (cautionsList.length > 0 ? 'inherit' : 'none') }} className="cautions-list">
+            <p className="calories"><span className="cal-title">Calories: </span>{calories}</p>
+            <div className="cautions-list-container" style={{ display: (cautionsList.length > 0 ? 'inherit' : 'none') }}>
+              <p className="cautions">Cautionary Labels: </p>
+              <ListGroup className="cautions-list">
                 { cautionsList }
               </ListGroup>
             </div>

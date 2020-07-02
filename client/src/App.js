@@ -3,6 +3,7 @@ import Recipie from './Recipe';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.scss';
 import { InputGroup, Form, Button, Row } from 'react-bootstrap';
+import Footer from './Footer';
 
 const App = () => {
   
@@ -56,11 +57,11 @@ const App = () => {
   return (
     <div className="app" style={appDimensions}>
       <section className="submit-section">
-        <h2 className="app-header-1" >Recipe Search</h2>
+        <h2 className="app-header-1" >Ingredient Search</h2>
         <Form id="recipeSubmit" onSubmit={submitSearch}>
-          <InputGroup className="mb-3">
+          <InputGroup className="mb-3 recipe-input">
             <Form.Control
-              placeholder="Search a recipe"
+              placeholder="Search"
               aria-label="Recipe"
               aria-describedby="basic-addon2"
               className="search-bar"
@@ -88,6 +89,7 @@ const App = () => {
           ))}
         </Row>
       </section>
+      <Footer />
     </div>
   );
 };

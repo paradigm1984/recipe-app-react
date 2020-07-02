@@ -1,0 +1,48 @@
+// Footer.scss
+
+@import 'Colors.scss';
+
+footer {
+ display: flex;
+ width: 100%;
+ flex-direction: column;
+ justify-content: center;
+
+
+ .footer-link-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .footer-link {
+   text-align: center;
+   font-weight: bold;
+
+  }
+  .footer-link a {
+    color: $White !important;
+    transition-duration: .3s;
+  }
+  .footer-link a:hover {
+    color: $Ming !important;
+    text-decoration: none;
+    transition-duration: .3s;
+  }
+ 
+
+ }
+ .copyright-link {
+  color: $White !important;
+  transition-duration: .3s;
+ }
+ .copyright-link:hover {
+   color: $Ming !important;
+   text-decoration: none;
+   transition-duration: .3s;
+ }
+
+
+}

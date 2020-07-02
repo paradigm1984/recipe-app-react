@@ -1,4 +1,4 @@
-@import 'colors.scss';
+@import 'Colors.scss';
 
 // div where the query is returned
 .response-section {
@@ -11,49 +11,66 @@
     justify-content: center;
     align-items: baseline;
     flex-wrap: wrap;
+    margin: 1rem auto;
 
     .recipe-card {
       margin: 1rem auto 2rem;
       height: auto;
-      color: $slateGrey;
+      color: $SlateGrey;
       max-width: 450px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 4px 8px rgba(0, 0, 0, 0.48);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
       .card-header {
-        background-color: $sand;
+        background-color: $White;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10), 0 3px 6px rgba(0, 0, 0, 0.15);
+        z-index: 10;
 
         .card-header-title {
-          color: $brown;
+          color: $SlateGrey;
         }
       }
       .card-img-container {
         padding: 1.521rem;
-        background-color: $sand;
+        background-color: $White;
+      }
+      .card-img-top {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
       }
       .card-img-container img {
         border-radius: 4px !important;
       }
-      
+      .basic-info-container,
+      .recipe-list-container {
+        background-color: $BlueGrey !important;
+      }
+
       .basic-info-container {
         display: flex;
         flex-direction: column;
-        // justify-content: space-around;
         align-items: baseline;
         padding: 0.75rem 1.25rem;
 
-
-        .calories,
-        .cook-time {
+        .calories {
           text-align: center;
+          margin: 1rem auto;
+          padding: 0;
         }
         .cal-title,
         .cautions {
           font-weight: bold;
+        }
+        .cautions {
+          text-align: center;
         }
         .cautions-list-container {
           width: 100%;
           display: flex;
           flex-direction: column;
           flex-wrap: wrap;
+          padding-top: 1rem;
+          border-top: 1px solid rgba(0, 0, 0, 0.125);
+
 
           .cautions {
             display: block;
@@ -64,6 +81,7 @@
             width: 100%;
             display: flex;
             flex-direction: row;
+            justify-content: center;
             flex-wrap: wrap;
             list-style-type: none;
 
@@ -71,8 +89,9 @@
             .cautions-list-item {
               margin: 10px;
               padding: 7px 9px;
-              border: 1px solid $tabBorderGrey;
+              border: 1px solid $TabBorderGrey;
               border-radius: 4px;
+              background-color: $White;
             }
           }
         }
@@ -86,11 +105,20 @@
         justify-content: space-between;
         align-items: center;
         font-size: 1.17em;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 10 !important;
+      }
+
+
+      .expand-button:hover {
+        text-decoration: none;
       }
 
       .expand-button span {
         font-size: 1.17em;
         color: black;
+        text-decoration: none;
       }
 
       .show > .fa-caret-down {
@@ -99,6 +127,10 @@
 
       .card-body {
         text-align: center;
+        background-color: $BlueGrey;
+      }
+      .list-group-item {
+        background-color: $BlueGrey;
       }
       .card-title {
         font-weight: bold;
@@ -109,13 +141,16 @@
         text-align: center;
 
         .recipe-button {
-          background-color: $lightRust;
+          background-color: $IndigoDye;
           border: none;
           border-radius: 0.25rem;
           border: 1px solid rgba(0, 0, 0, 0.125);
           font-weight: bold;
         }
       }
+    }
+    .recipe-card:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
   }
 }
