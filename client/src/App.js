@@ -42,14 +42,13 @@ const App = () => {
 
     
 
-    // try {
+    try {
     response = await fetch(`https://api.edamam.com/search?q=${queryString}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     console.log("response no filter: ", response);
     data = await response.json();
-    //   });
-    // } catch (err) {
+    } catch (err) {
     console.log("error: ", err);
-    // }
+    }
 
     console.log("data: ", data.hits);
     setRecipies(data.hits);
