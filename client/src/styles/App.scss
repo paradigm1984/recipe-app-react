@@ -92,6 +92,13 @@
         }
       }
     }
-  } 
+  }
+  .modal-close {
+    background-color: #3a7275;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition-duration: .3s;
+  }
 }
 
