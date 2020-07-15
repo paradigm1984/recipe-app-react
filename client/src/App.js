@@ -52,17 +52,17 @@ const App = () => {
       // console.log("response no filter: ", response);
       response = await fetch(`https://api.edamam.com/search?q=${queryString}&app_id=${APP_ID}&app_key=${APP_KEY}`);
       data = await response.json();
-      console.log("first query: ", firstQuery);
+      // console.log("first query: ", firstQuery);
       if (data.hits.length == 0 && firstQuery === false) {
-        console.log("TRIGGER MODAL FOR INCORRECT QUERY HERE");
+        // console.log("TRIGGER MODAL FOR INCORRECT QUERY HERE");
         setModalText("This has been caused by a misspelled search. Please try again.");
         handleShow();
       }
-      console.log("data: ", data.hits);
+      // console.log("data: ", data.hits);
       setRecipies(data.hits);
     } catch (err) {
       if (err == 'TypeError: Failed to fetch') {
-        console.log("error is: ", err);
+        // console.log("error is: ", err);
         setModalText("This has been caused by maxing out the free queries to the edamam.com API. Please wait a few minutes and try again.")
         handleShow();
       }
